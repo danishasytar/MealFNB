@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-list-header style="background-color: grey;">
+      Allday
+    </ion-list-header >
+    <ion-item *ngFor="let allday of allday">
+    <div class="row"> 
+      <div class="col">
+        <strong>{{allday.name}}</strong><br>
+          <ion-badge color="light">{{allday.type}}   </ion-badge>
+          </div>
+          <div class="col">
+       <button style="float: right;"  small ion-button on-click="refill()">
+        Refill
+      </button>
+      </div>
+      </div>
+    </ion-item>
+
+    <ion-list-header style="background-color: grey;">
+      Lunch Dinner
+    </ion-list-header>
+    <ion-item *ngFor="let lunch_dinner of lunch_dinner">
+    <div class="row"> 
+      <div class="col">
+        <strong>{{lunch_dinner.name}}</strong><br>
+        <ion-badge color="light">{{lunch_dinner.type}}</ion-badge>
+        </div>
+        <div class="col">
+      <button  style="float: right;" small ion-button on-click="refill()">
+          Refill      
+      </button>
+      </div>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
