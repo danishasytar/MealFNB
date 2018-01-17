@@ -1,6 +1,8 @@
 {
-  "name": "Meal_FnB_ionic3",
+  "name": "meal_ionic_v3",
   "app_id": "",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }

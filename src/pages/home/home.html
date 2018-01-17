@@ -7,12 +7,35 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
-
-  <div style="height: 100px;"></div>
-  <button ion-button block on-click="openPage()">Satelitte</button>
-  <button ion-button block on-click="openPage()">Regional</button>
-  <button ion-button block on-click="openPage()">Domestic</button>
-
+<ion-content>
+<ion-card>
+  <ion-item (click)="goToLounge()">
+    <ion-thumbnail item-start>
+      <img src="https://images.fineartamerica.com/images-medium-large-5/rocky-mountain-landscape-meadow-in-spring-western-panorama-with-wildflowers-square-format-walt-curlee.jpg">
+    </ion-thumbnail>
+    <ion-card-header>
+      Satellite
+    </ion-card-header>
+  </ion-item>
+</ion-card>
+<ion-card>
+  <ion-item (click)="goToLounge()">
+    <ion-thumbnail item-start>
+      <img src="https://images.fineartamerica.com/images-medium-large-5/rocky-mountain-landscape-meadow-in-spring-western-panorama-with-wildflowers-square-format-walt-curlee.jpg">
+    </ion-thumbnail>
+    <ion-card-header>
+      Regional
+    </ion-card-header>
+  </ion-item>
+</ion-card>
+<ion-card>
+  <ion-item (click)="goToLounge()">
+    <ion-thumbnail item-start>
+      <img src="https://images.fineartamerica.com/images-medium-large-5/rocky-mountain-landscape-meadow-in-spring-western-panorama-with-wildflowers-square-format-walt-curlee.jpg">
+    </ion-thumbnail>
+    <ion-card-header>
+      Domestic
+    </ion-card-header>
+  </ion-item>
+</ion-card>
 </ion-content>

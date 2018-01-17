@@ -1,62 +1,86 @@
-
 <ion-header>
-
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>À la carte</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content>
+<ion-content >
+	<ion-row >
+		<ion-col no-padding >
+			<ion-card>
+			  <img src="https://images.fineartamerica.com/images-medium-large-5/rocky-mountain-landscape-meadow-in-spring-western-panorama-with-wildflowers-square-format-walt-curlee.jpg"/>
+			  <ion-card-content>
+			    <ion-card-title>
+			      Noodles
+			      </ion-card-title>
+			    <p>
+			    	4 choices
+			    </p>
+			    <p>
+			    	Freshly baked by chef on duty
+			    </p>
+			  </ion-card-content>
+			</ion-card>
+		</ion-col>
+		<ion-col no-padding >
+			<ion-card>
+			  <img src="https://images.fineartamerica.com/images-medium-large-5/rocky-mountain-landscape-meadow-in-spring-western-panorama-with-wildflowers-square-format-walt-curlee.jpg"/>
+			  <ion-card-content>
+			    <ion-card-title>
+			      Sandwiches
+			      </ion-card-title>
+			    <p>
+			    	3 types
+			    </p>
+			    <p>
+			    	2 proteins and 1 vege
+			    </p>
+			  </ion-card-content>
+			</ion-card>
+		</ion-col>
 
-	<div class="row">
-		<div class="col">
+	</ion-row>
+	<ion-row >
+		<ion-col no-padding >
 			<ion-card>
-				<div style="height : 200px;">	
-			  <img src="assets/imgs/ala3.jpg">
-			  </div>
-			  <ion-item (click)="goPage()">
-			  	<ion-icon style="font-size: 2.0em;" padding-right name="md-restaurant"></ion-icon> À la carte
-			  </ion-item>
+			  <img src="https://images.fineartamerica.com/images-medium-large-5/rocky-mountain-landscape-meadow-in-spring-western-panorama-with-wildflowers-square-format-walt-curlee.jpg"/>
+			  <ion-card-content>
+			    <ion-card-title>
+			      Soups
+			      </ion-card-title>
+			    <p>
+			    	2 types
+			    </p>
+			    <p>
+			    	Cream and clear soups
+			    </p>
+			  </ion-card-content>
 			</ion-card>
-		</div>
-		<div class="col">
+		</ion-col>
+		<ion-col no-padding >
 			<ion-card>
-				<div style="height : 200px;">	
-			  <img src="assets/imgs/ala4.jpg">
-			  </div>
-			  <ion-item on-click="goPage()">
-			  	<ion-icon style="font-size: 2.0em;" padding-right name="md-restaurant"></ion-icon> À la carte
-			  </ion-item>
+			  <img src="https://images.fineartamerica.com/images-medium-large-5/rocky-mountain-landscape-meadow-in-spring-western-panorama-with-wildflowers-square-format-walt-curlee.jpg"/>
+			  <ion-card-content>
+			    <ion-card-title>
+			      Desserts
+			      </ion-card-title>
+			    <p>
+			    	3 types
+			    </p>
+			    <p>
+			    	2 cakes and 1 local kueh
+			    </p>
+			  </ion-card-content>
 			</ion-card>
-		</div>
-	</div>
+		</ion-col>
 
-	<div class="row">
-		<div class="col">
-			<ion-card>
-				<div style="height : 200px;">	
-			  <img src="assets/imgs/ala1.jpg">
-			  </div>
-			  <ion-item on-click="goPage()">
-			  	<ion-icon style="font-size: 2.0em;" padding-right name="md-restaurant"></ion-icon> À la carte
-			  </ion-item>
-			</ion-card>
-		</div>
-		<div class="col">
-			<ion-card>
-				<div style="height :200px;">	
-			  <img src="assets/imgs/ala2.jpg">
-			  </div>
-			  <ion-item on-click="goPage()">
-			  	<ion-icon style="font-size: 2.0em;" padding-right name="md-restaurant"></ion-icon> À la carte
-			  </ion-item>
-			</ion-card>
-		</div>
-	</div>
+	</ion-row>
+
+	<button ion-button block on-click="orderMeal()">Order Meal</button>
+
 
 </ion-content>

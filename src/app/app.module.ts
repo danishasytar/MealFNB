@@ -5,15 +5,21 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { BuffetPage } from '../pages/buffet/buffet';
-import { CategoriesPage, } from '../pages/categories/categories';
+import { MealcategoryPage } from '../pages/mealcategory/mealcategory';
 import { AlacartePage } from '../pages/alacarte/alacarte';
 import { PassengerorderPage } from '../pages/passengerorder/passengerorder';
+import { BuffetlistPage } from '../pages/buffetlist/buffetlist';
+import { OrdermodalPage } from '../pages/ordermodal/ordermodal';
 
 
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ApiProvider } from '../providers/api/api';
+import { Device} from '@ionic-native/device';
+import { HTTP} from '@ionic-native/http';
 import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -21,9 +27,11 @@ import { HttpClientModule } from '@angular/common/http';
     MyApp,
     HomePage,
     BuffetPage,
-    CategoriesPage,
+    MealcategoryPage,
     AlacartePage,
-    PassengerorderPage
+    PassengerorderPage,
+    BuffetlistPage,
+    OrdermodalPage
   ],
   imports: [
     BrowserModule,
@@ -35,14 +43,19 @@ import { HttpClientModule } from '@angular/common/http';
     MyApp,
     HomePage,
     BuffetPage,
-    CategoriesPage,
+    MealcategoryPage,
     AlacartePage,
-    PassengerorderPage
+    PassengerorderPage,
+    BuffetlistPage,
+    OrdermodalPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    Device,
+    HTTP,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ApiProvider
   ]
 })
 export class AppModule {}

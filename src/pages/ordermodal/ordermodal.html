@@ -1,0 +1,63 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">Close</button>
+    </ion-buttons>
+    <ion-title>Order Meal</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item no-padding>
+    <ion-label color="primary" stacked>Passenger name</ion-label>
+    <ion-input type="email" [(ngModel)]="name" placeholder="Enter name"></ion-input>
+  </ion-item>
+
+<br>
+ <ion-list>
+ 	<ion-item-divider>
+ 		Order
+ 	</ion-item-divider>
+
+   <ion-item>
+     <ion-label>Noodles</ion-label>
+     <ion-checkbox item-right [(ngModel)]="noodle" (ionChange)="noodlequantity()"></ion-checkbox>
+   </ion-item>
+  <ion-item  *ngIf=shownoodlequantity>
+    <ion-label color="primary">Quantity</ion-label>
+    <ion-input type="email" [(ngModel)]="noodlequantity_" placeholder="Enter Quantity"></ion-input>
+  </ion-item>
+   <ion-item>
+     <ion-label>Sandwiches</ion-label>
+     <ion-checkbox item-right [(ngModel)]="sandwich" (ionChange)="sandwichesquantity()"></ion-checkbox>
+   </ion-item>
+  <ion-item  *ngIf=showsandwichesquantity>
+    <ion-label color="primary">Quantity</ion-label>
+    <ion-input type="email" [(ngModel)]="sandwichquantity_" placeholder="Enter Quantity"></ion-input>
+  </ion-item>
+   <ion-item>
+     <ion-label>Soup</ion-label>
+     <ion-checkbox item-right [(ngModel)]="soup" (ionChange)="soupquantity()"></ion-checkbox>
+   </ion-item>
+  <ion-item  *ngIf=showsoupquanity>
+    <ion-label color="primary">Quantity</ion-label>
+    <ion-input type="email" [(ngModel)]="soupquantity_" placeholder="Enter Quantity"></ion-input>
+  </ion-item>
+   <ion-item>
+     <ion-label>Dessert</ion-label>
+     <ion-checkbox item-right [(ngModel)]="dessert" (ionChange)="dessertquantity()"></ion-checkbox>
+   </ion-item>
+  <ion-item  *ngIf=showdessertquantity>
+    <ion-label color="primary">Quantity</ion-label>
+    <ion-input type="email" [(ngModel)]="dessertquantity_" placeholder="Enter Quantity"></ion-input>
+  </ion-item>
+
+ </ion-list>
+
+	<button ion-button block on-click="orderMeal()">Add Order</button>
+
+
+</ion-content>

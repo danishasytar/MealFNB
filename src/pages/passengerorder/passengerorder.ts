@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+import { ApiProvider } from './../../providers/api/api';
+
 
 /**
  * Generated class for the PassengerorderPage page.
@@ -8,18 +10,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-passengerorder',
   templateUrl: 'passengerorder.html',
 })
 export class PassengerorderPage {
+	display;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public api:ApiProvider, public navCtrl: NavController, public navParams: NavParams) {
+  	this.getdata();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PassengerorderPage');
   }
 
+  getdata(){
+  	this.api.getdata('/api/passenger_order/', {})
+   		.then(data => {
+            console.log((data[8].passenger_order).split("|"))
+            this.display = (data[8].passenger_order).split("|");
+          }, err => {
+            console.log(err);
+          });
+  }
 }

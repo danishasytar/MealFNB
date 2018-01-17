@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ModalController} from 'ionic-angular';
+import { OrdermodalPage } from '../ordermodal/ordermodal';
+
 
 /**
  * Generated class for the AlacartePage page.
@@ -8,22 +10,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-alacarte',
   templateUrl: 'alacarte.html',
 })
 export class AlacartePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AlacartePage');
   }
 
-  goPage(){
-  	console.log("go")
+  orderMeal(){
+  	console.log("order");
+   let ordermodal = this.modalCtrl.create(OrdermodalPage,{});
+   ordermodal.present();
   }
-
 }
