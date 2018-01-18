@@ -15,7 +15,7 @@ import { ApiProvider } from './../../providers/api/api';
   templateUrl: 'passengerorder.html',
 })
 export class PassengerorderPage {
-	display;
+	list;
 
   constructor(public api:ApiProvider, public navCtrl: NavController, public navParams: NavParams) {
   	this.getdata();
@@ -28,8 +28,11 @@ export class PassengerorderPage {
   getdata(){
   	this.api.getdata('/api/passenger_order/', {})
    		.then(data => {
-            console.log((data[8].passenger_order).split("|"))
-            this.display = (data[8].passenger_order).split("|");
+         for(let i = 0;i<data.length;i++){
+           data[i].passenger_order = (data[i].passenger_order).split("|");
+         } 
+         this.list = data;
+         console.log(data);
           }, err => {
             console.log(err);
           });
