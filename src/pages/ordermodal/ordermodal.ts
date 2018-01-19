@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams , ViewController, AlertController} from 'ionic-angular';
 import { ApiProvider } from './../../providers/api/api';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 
 
 @Component({
@@ -24,7 +26,7 @@ sandwichquantity_;
 soupquantity_;
 dessertquantity_;
 
-  constructor(public api:ApiProvider, public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, public viewCtrl:ViewController) {
+  constructor(public http:HttpClient, public api:ApiProvider, public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, public viewCtrl:ViewController) {
   }
 
   ionViewDidLoad() {
@@ -94,15 +96,26 @@ dessertquantity_;
   			"passenger_order": order,
   			"time": " "}
   		
-console.log(data)
+  console.log(data)
 
-this.api.postdata('/api/passenger_order/add/', data)
-	  let alert = this.alertCtrl.create({
-	    title: 'Order sent',
-	    buttons: ['Done']
-	  });
-	  alert.present();
-    this.viewCtrl.dismiss();
+  this.api.postdata('/api/passenger_order/add/', data)
+let message = { 
+  app_id: "157c1623-1c64-4755-b120-e8aab8087e7a",//app id at one signal
+  contents: {"en": "New Order In"},
+  included_segments: ["All"]
+};
+this.http.post('https://onesignal.com/api/v1/notifications', JSON.stringify(message), {headers: new HttpHeaders({"Content-Type":"application/json; charset=utf-8", 'Authorization': 'Basic ZTZmNzBlZjUtMWYxNC00OWExLTkyZDMtNDE3MThlNDM1N2U4'})})
+  .subscribe(res => {
+    console.log(res)
+  }, (err) => {
+    console.error(err)  
+  }); 
+      let alert = this.alertCtrl.create({
+  	    title: 'Order sent',
+  	    buttons: ['Done']
+  	  });
+  	  alert.present();
+      this.viewCtrl.dismiss();
 
   }
 

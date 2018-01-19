@@ -28,11 +28,12 @@ export class PassengerorderPage {
   getdata(){
   	this.api.getdata('/api/passenger_order/', {})
    		.then(data => {
-         for(let i = 0;i<data.length;i++){
-           data[i].passenger_order = (data[i].passenger_order).split("|");
+         this.list = data
+         for(let i = 0;i<this.list.length;i++){
+           this.list[i].passenger_order = (this.list[i].passenger_order).split("|");
          } 
-         this.list = data;
-         console.log(data);
+         this.list = this.list;
+         console.log(this.list);
           }, err => {
             console.log(err);
           });
